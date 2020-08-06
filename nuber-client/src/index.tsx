@@ -9,7 +9,7 @@ import theme from './styles/theme';
 
 ReactDOM.render(
   <ApolloProvider client={client}>
-    <GlobalStyle />,
+    <GlobalStyle />
     <ThemeProvider theme={theme}>
       <App />
     </ThemeProvider>
