@@ -40,7 +40,7 @@ const FakeInput = styled.div`
 
 interface IProps extends RouteComponentProps<any> {}
 
-const OutHomePresenter: React.SFC<IProps> = () => (
+const LoginPresenter: React.SFC<IProps> = () => (
   <Container>
     <Visual>
       <Title>Nuber</Title>
@@ -59,4 +59,4 @@ const OutHomePresenter: React.SFC<IProps> = () => (
     </Footer>
   </Container>
 );
-export default OutHomePresenter;
+export default LoginPresenter;
