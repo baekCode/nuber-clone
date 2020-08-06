@@ -1,12 +1,15 @@
 import * as styledComponents from 'styled-components';
-import { ITheme } from './theme';
+
+interface IThemInterface {
+  blueColor: string;
+}
 
 const {
   default: styled,
   css,
   keyframes,
   ThemeProvider,
-} = styledComponents as styledComponents.ThemedStyledComponentsModule<ITheme>;
+} = styledComponents as styledComponents.ThemedStyledComponentsModule<IThemInterface>;
 
 export { css, keyframes, ThemeProvider };
 export default styled;
