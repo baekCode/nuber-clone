@@ -1,7 +1,7 @@
 import React from 'react';
 
 const index = () => {
-  return <div></div>;
+  return <div>Social login</div>;
 };
 
 export default index;

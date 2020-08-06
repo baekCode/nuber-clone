@@ -2,6 +2,7 @@ import * as styledComponents from 'styled-components';
 
 interface IThemInterface {
   blueColor: string;
+  greyColor: string;
 }
 
 const {
