@@ -1,7 +1,2 @@
-import React from 'react';
-
-const index = () => {
-  return <div>Social login</div>;
-};
-
-export default index;
+import SocialPresenter from './SocialPresenter';
+export default SocialPresenter;
