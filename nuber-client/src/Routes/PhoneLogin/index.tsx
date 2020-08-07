@@ -1,7 +1,3 @@
-import React from 'react';
+import PhoneLoginPresenter from './PhoneLoginPresenter';
 
-const index = () => {
-  return <div>Phone</div>;
-};
-
-export default index;
+export default PhoneLoginPresenter;
