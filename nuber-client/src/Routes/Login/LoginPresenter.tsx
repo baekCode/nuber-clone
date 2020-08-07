@@ -44,7 +44,7 @@ interface IProps extends RouteComponentProps<any> {}
 const LoginPresenter: React.SFC<IProps> = () => (
   <Container>
     <Helmet>
-      <title>login : nuber</title>
+      <title>Login : Nuber</title>
     </Helmet>
     <Visual>
       <Title>Nuber</Title>
