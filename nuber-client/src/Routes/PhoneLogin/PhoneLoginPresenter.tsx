@@ -16,6 +16,10 @@ const BackArrowExtends = styled(BackArrowBtn)`
   top: 20px;
   left: 20px;
 `;
+const Title = styled.h2`
+  margin-bottom: 30px;
+  font-size: 24px;
+`;
 const CountrySelect = styled.select`
   font-size: 20px;
   color: '#2c3e50';
@@ -51,6 +55,7 @@ const PhoneLoginPresenter: React.SFC<IProps> = () => (
       <title>Phone Login : Nuber</title>
     </Helmet>
     <BackArrowExtends linkTo={'/'} />
+    <Title>Enter Your Mobile Number</Title>
     <CountrySelect>
       {countries.map((country, index) => (
         <CountryOption key={index} value={country.dial_code}>
