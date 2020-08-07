@@ -8,6 +8,8 @@ import { countries } from 'src/countries';
 interface IProps {
   countryCode: string;
   phoneNumber: string;
+  onInputChange: (event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => void;
+  onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }
 
 const Container = styled.div`
@@ -52,22 +54,29 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const PhoneLoginPresenter: React.SFC<IProps> = ({ countryCode, phoneNumber }) => (
+const PhoneLoginPresenter: React.SFC<IProps> = ({ countryCode, phoneNumber, onInputChange, onSubmit }) => (
   <Container>
     <Helmet>
       <title>Phone Login : Nuber</title>
     </Helmet>
     <BackArrowExtends linkTo={'/'} />
     <Title>Enter Your Mobile Number</Title>
-    <CountrySelect value={countryCode}>
+    <CountrySelect value={countryCode} name={countryCode} onChange={onInputChange}>
       {countries.map((country, index) => (
         <CountryOption key={index} value={country.dial_code}>
           {country.flag} {country.name} ({country.dial_code})
         </CountryOption>
       ))}
     </CountrySelect>
-    <Form>
-      <Input placeholder={'053 031 1234'} value={phoneNumber} type={'input'} required />
+    <Form onSubmit={onSubmit}>
+      <Input
+        placeholder={'053 031 1234'}
+        value={phoneNumber}
+        type={'input'}
+        required
+        name={'phoneNumber'}
+        onChange={onInputChange}
+      />
       <Button>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill={'white'}>
           <path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />

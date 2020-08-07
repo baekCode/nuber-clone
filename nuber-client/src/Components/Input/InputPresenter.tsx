@@ -26,9 +26,18 @@ interface IProps {
   type: string;
   required: boolean;
   value: any;
+  name: string;
+  onChange: any;
 }
 
-const InputPresenter: React.SFC<IProps> = ({ placeholder = '', type = 'text', required = true, value }) => (
-  <Container placeholder={placeholder} type={type} required={required} value={value} />
+const InputPresenter: React.SFC<IProps> = ({
+  placeholder = '',
+  type = 'text',
+  required = true,
+  value,
+  name = '',
+  onChange,
+}) => (
+  <Container placeholder={placeholder} type={type} required={required} value={value} name={name} onChange={onChange} />
 );
 export default InputPresenter;

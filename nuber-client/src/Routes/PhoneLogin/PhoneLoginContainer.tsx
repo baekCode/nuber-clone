@@ -9,9 +9,32 @@ const PhoneLoginContainer: React.SFC<IProps> = () => {
     countryCode: '+82',
     phoneNumber: '',
   });
+  const onInputChange: React.ChangeEventHandler<HTMLInputElement | HTMLSelectElement> = e => {
+    const {
+      target: { name, value },
+    } = e;
+    setState({
+      ...state,
+      [name]: value,
+    });
+  };
+  const onSubmit: React.FormEventHandler<HTMLFormElement> = e => {
+    e.preventDefault();
+    const { countryCode, phoneNumber } = state;
+
+    // tsling:disable-next-line
+    console.log(countryCode, phoneNumber);
+  };
   const { countryCode, phoneNumber } = state;
-  console.log(setState);
-  return <PhoneLoginPresenter countryCode={countryCode} phoneNumber={phoneNumber} />;
+
+  return (
+    <PhoneLoginPresenter
+      countryCode={countryCode}
+      phoneNumber={phoneNumber}
+      onInputChange={onInputChange}
+      onSubmit={onSubmit}
+    />
+  );
 };
 
 export default PhoneLoginContainer;
