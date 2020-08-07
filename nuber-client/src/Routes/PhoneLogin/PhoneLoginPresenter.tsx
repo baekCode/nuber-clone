@@ -5,7 +5,10 @@ import BackArrowBtn from 'src/Components/BackArrowBtn';
 import Input from 'src/Components/Input';
 import { countries } from 'src/countries';
 
-interface IProps {}
+interface IProps {
+  countryCode: string;
+  phoneNumber: string;
+}
 
 const Container = styled.div`
   margin-top: 30px;
@@ -49,14 +52,14 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-const PhoneLoginPresenter: React.SFC<IProps> = () => (
+const PhoneLoginPresenter: React.SFC<IProps> = ({ countryCode, phoneNumber }) => (
   <Container>
     <Helmet>
       <title>Phone Login : Nuber</title>
     </Helmet>
     <BackArrowExtends linkTo={'/'} />
     <Title>Enter Your Mobile Number</Title>
-    <CountrySelect>
+    <CountrySelect value={countryCode}>
       {countries.map((country, index) => (
         <CountryOption key={index} value={country.dial_code}>
           {country.flag} {country.name} ({country.dial_code})
@@ -64,7 +67,7 @@ const PhoneLoginPresenter: React.SFC<IProps> = () => (
       ))}
     </CountrySelect>
     <Form>
-      <Input placeholder={'053 031 1234'} />
+      <Input placeholder={'053 031 1234'} value={phoneNumber} type={'input'} required />
       <Button>
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill={'white'}>
           <path d="M7.33 24l-2.83-2.829 9.339-9.175-9.339-9.167 2.83-2.829 12.17 11.996z" />
