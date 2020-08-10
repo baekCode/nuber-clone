@@ -61,7 +61,7 @@ const PhoneLoginPresenter: React.SFC<IProps> = ({ countryCode, phoneNumber, onIn
     </Helmet>
     <BackArrowExtends linkTo={'/'} />
     <Title>Enter Your Mobile Number</Title>
-    <CountrySelect value={countryCode} name={countryCode} onChange={onInputChange}>
+    <CountrySelect value={countryCode} name={'countryCode'} onChange={onInputChange}>
       {countries.map((country, index) => (
         <CountryOption key={index} value={country.dial_code}>
           {country.flag} {country.name} ({country.dial_code})
