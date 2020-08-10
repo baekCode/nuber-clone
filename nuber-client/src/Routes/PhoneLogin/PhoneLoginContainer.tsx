@@ -22,7 +22,6 @@ const PhoneLoginContainer: React.SFC<IProps> = () => {
     e.preventDefault();
     const { countryCode, phoneNumber } = state;
 
-    // tsling:disable-next-line
     console.log(countryCode, phoneNumber);
   };
   const { countryCode, phoneNumber } = state;
